@@ -21,13 +21,13 @@ public class AppMinesweeper extends Application {
     public static final Color revealed1 = Color.MOCCASIN;
     public static final Color revealed2 = Color.BURLYWOOD;
     public static final int x = 16;
-    public static final int y = x;
+    public static final int y = 16;
     public static final int mineCount = x*2;
     public static final GridPane gridPane = new GridPane();
     public static final List<Rectangle> mineFields = new ArrayList<>();
 
     @Override
-    public void start(Stage stage) throws Exception{
+    public void start(Stage stage){
         gridPane.setGridLinesVisible(false);
 
         Scene scene = new Scene(gridPane);
@@ -36,12 +36,8 @@ public class AppMinesweeper extends Application {
 
 
         //sketchy changelistener stuff to keep width and height the same, doesnt really work
-        stage.heightProperty().addListener((observableValue, oldValue, newValue) -> {
-            stage.setWidth((double)newValue);
-        });
-        stage.widthProperty().addListener((observableValue, oldValue, newValue) -> {
-            stage.setHeight((double)newValue);
-        });
+        stage.heightProperty().addListener((observableValue, oldValue, newValue) -> stage.setWidth((double)newValue));
+        stage.widthProperty().addListener((observableValue, oldValue, newValue) -> stage.setHeight((double)newValue));
 
         //creating the rectangles in 2 colors
         for (int i = 0; i < y; i++) {
