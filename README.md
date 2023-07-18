@@ -6,5 +6,5 @@ basic Minesweeper game in JavaFX
 
 ## Tutorial
 
-- right-click to uncover tile
-- left-click to flag tile
+- left-click to uncover tile
+- right-click to flag tile
