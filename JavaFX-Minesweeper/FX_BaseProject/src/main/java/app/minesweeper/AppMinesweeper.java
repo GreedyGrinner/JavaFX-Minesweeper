@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 public class AppMinesweeper extends Application {
 
@@ -20,14 +21,19 @@ public class AppMinesweeper extends Application {
     public static final Color flag = Color.RED;
     public static final Color revealed1 = Color.MOCCASIN;
     public static final Color revealed2 = Color.BURLYWOOD;
-    public static final int x = 16;
-    public static final int y = 16;
+    public static int x = 16;
+    public static int y = 16;
     public static final int mineCount = x*2;
     public static final GridPane gridPane = new GridPane();
     public static final List<Rectangle> mineFields = new ArrayList<>();
 
     @Override
     public void start(Stage stage){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("x: ");
+        x = scanner.nextInt();
+        System.out.println("y: ");
+        y = scanner.nextInt();
         gridPane.setGridLinesVisible(false);
 
         Scene scene = new Scene(gridPane);
